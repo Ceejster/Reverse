@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>JS Coding Practice</title>
+    <title>Reverse-esreveR</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +19,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">JS Project</a>
+        <a class="navbar-brand" href="index.html">Reverse-esreveR</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,21 +45,72 @@
 
 <main class="flex-shrink-0">
     <div class="container py-5 px-5">
-        <h2 class="border-1 border-bottom border-dark">
-            The Code for NAME
+        <h2 class="border-1 border-bottom border-dark pt-5">
+            The Code for: Reverse-esreveR
         </h2>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2">
             <div class="col-lg-8">
-                <pre class="line-numbers"><code class="language-javascript">function HelloWorld() {
-    alert("Hello World");
+                <pre class="line-numbers"><code class="language-javascript">//get string from page
+//controller function
+function getValue() {
+    document.getElementById("reverseAlert").classList.add("invisible");
+    
+    let string = document.getElementById("regString").value;
+    let rev = reverse(string);
+    
+    displayReverse(rev);
+}
+
+//reverse the string
+//logic function
+function reverse(userString) {
+    let revString = [];
+
+    //reverse string with for loop
+    for (let i = userString.length - 1; i >= 0; i--) {
+        revString += userString[i];
+    }
+    return revString;
+}
+
+//display message
+//view function
+function displayReverse(revString) {
+    //write message to HTML and turn on alert
+    document.getElementById("reverseMessage").innerHTML = `${revString}`;
+    document.getElementById("reverseAlert").classList.remove("invisible");
 }                
 </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code Title</p>
-                <h5>Hello world</h5>
-                <p>Hello world function that alerts user</p>
+                <h4>Reverse-esreveR</h4>
+                <br>
+                <h5>getValue() {</h5>
+                    <p>
+                        To be safe we are making sure the invisible class is added at the start.
+                        Afte we are creating two variables, the first is to get the inputed string from the page.
+                        The second is the reverse array of our 2nd function.
+                        Lastly we are calling <strong>disPlayReverse</strong> to input the reverse string to the browser.
+                    </p>
+                <h5>}</h5>
+                <br>
+                <br>
+                <h5>reverse(userString){</h5>
+                    <p>
+                        The parameter will be using a variable declared in our controller function. Which is the users original input
+                        Then, initialize an empty array, and run a for loop backwards of the inputed string to reverse it.
+                    </p>
+                <h5>}</h5>
+                <br>
+                <br>
+                <br>
+                <h5>displayReverse(revString){</h5>
+                    <p>
+                        We are talking the variable that is saved for our reverse funciton to use it in the parameter. 
+                        After we are selecting the part of our HTML where we want this to dispaly. Then we are removing the invisible class to show the alert of our reverse string.
+                    </p>
+                <h5>}</h5>
             </div>
         </div>
     </div>
